@@ -1,0 +1,84 @@
+/* position: fixed로 따라오는 헤더 설계 */
+header {
+  height: 5em;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+header .max-width {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+/* margin-left 대신에 사용하는 margin 사용법 */
+header h1 {
+  /* margin: auto auto auto 0; */
+  margin-left: 0;
+  margin-right: auto;
+  height: 3.2rem;
+}
+
+.profile-btn {
+  width: 4rem;
+  height: 4rem;
+  /* 포커스 됐을 때 이미지가 둥글게 보이게 해줘서 <button>에 border-radius 줌 */
+  border-radius: 50%;
+  /* img가 <button>을 넘치기 때문에 overflow:hidden; 을 줘서 둥글게 만듦 */
+  overflow: hidden;
+}
+
+.profile-btn img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.search-form {
+  flex: 0 0 20rem;
+  position: relative;
+}
+
+.search-form input {
+  width: 100%;
+  background: none;
+  border: 1px solid rgba(var(--rgb-light), 0.5);
+  height: 4.4rem;
+  border-radius: 2.2rem;
+  /* text-indent: 1em; */
+  padding: 0 1em;
+  color: rgba(var(--rgb-light));
+  opacity: 0.5;
+  transition: all 0.3s;
+  box-sizing: border-box;
+}
+
+.search-form input:focus {
+  opacity: 1;
+}
+
+.search-form input::placeholder {
+  color: rgba(var(--rgb-light));
+}
+
+.search-form button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 1rem;
+  border-radius: 50%;
+  width: 3.2rem;
+  height: 3.2rem;
+  /* padding: 0.6em; */
+}
+
+.search-form button img {
+  width: 60%;
+  margin: auto;
+}

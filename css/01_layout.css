@@ -1,0 +1,29 @@
+.wrap {
+  display: flex;
+  flex-flow: column nowrap;
+  min-height: 100vh;
+}
+
+/* 사파리 모바일 100vh 버그 방지용 코드 */
+@supports (-webkit-touch-callout: none) {
+  .wrap {
+    height: -webkit-fill-available;
+  }
+}
+
+main {
+  flex-grow: 1;
+  background: slateblue;
+  padding-top: 5em;
+}
+
+footer {
+  background: skyblue;
+  height: 5em;
+}
+
+/* 미디어쿼리 안 쓰고 반응형 레이아웃 설계 */
+.max-width {
+  width: min(calc(var(--max-width)*1rem), calc(100% - 10vw));
+  margin: auto;
+}
